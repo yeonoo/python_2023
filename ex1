@@ -1,0 +1,12 @@
+ex1 = '''
+<html>
+  <head>
+    <title> HTML 예제 </title>
+  </head>
+  <body>
+    <p align="center"> text1 </p>
+    <p align="right"> text2 </p>
+    <p align="left"> test3 </p>
+    <img src="c:\\temp\\image\\무제.png">
+  </body>
+</html> '''
