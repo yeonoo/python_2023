@@ -10,7 +10,7 @@ ex2 = '''
           <span class='price'> 3000원 </span>
           <span class='count'> 10개 </span>
           <span class='store'> 바나나 가게 </span>
-          <a href='https://www.banana.com'> banana.com <a>
+          <a href='https://www.banana.com'> banana.com </a>
         </p>
       </div>
       <div>
@@ -18,7 +18,7 @@ ex2 = '''
           <span class='price'> 100원 </span>
           <span class='count'> 50개 </span>
           <span class='store'> 체리 가게 </span>
-          <a href='https://www.cherry.com'> cherry.com <a>
+          <a href='https://www.cherry.com'> cherry.com </a>
         </p>
       </div>
       <div>
@@ -26,7 +26,7 @@ ex2 = '''
           <span class='price'> 500원 </span>
           <span class='count'> 20개 </span>
           <span class='store'> 오렌지 가게 </span>
-          <a href='https://www.orange.com'> orange.com <a>
+          <a href='https://www.orange.com'> orange.com </a>
         </p>
       </div>   
   </body>
