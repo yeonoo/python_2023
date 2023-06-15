@@ -1,0 +1,17 @@
+import zipfile
+import os
+
+# 압축 파일 이름
+zip_filename = 'images.zip'
+
+# zipfile 객체 생성
+zipf = zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED)
+
+# 디렉토리 내의 모든 파일에 대해
+for root, dirs, files in os.walk(img_dir):
+    for file in files:
+        # 각 파일을 압축 파일에 추가
+        zipf.write(os.path.join(root, file))
+
+# zipfile 객체 닫기
+zipf.close()
