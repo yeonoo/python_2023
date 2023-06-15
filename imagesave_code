@@ -1,0 +1,13 @@
+import os
+
+# 이미지를 저장할 경로를 지정합니다. 경로는 필요에 따라 변경할 수 있습니다.
+img_dir = "/content/imgs/"
+
+for i, img_url in enumerate(imgs):
+    response = requests.get(img_url)  # 이미지 URL로 요청을 보냅니다.
+
+    # 응답이 성공적이라면 이미지를 저장합니다.
+    if response.status_code == 200:
+        with open(img_dir + names[i]+'.jpg', 'wb') as f:
+            print(i+1,"번째 이미지를 저장 중입니다.")
+            f.write(response.content)
