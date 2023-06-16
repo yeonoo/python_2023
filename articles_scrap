@@ -1,0 +1,22 @@
+def articles_scrap(url, num, file_name):
+  titles = []
+  links = []
+
+  for i in range(num):
+    data = requests.get(url)
+    soup = bs(data.text, 'html.parser')
+    lis = soup.select('#main_pack > section.sc_new.sp_nnews._prs_nws > div > div.group_news > ul > li > div.news_wrap.api_ani_send > div > a')
+
+    for li in lis:
+      titles.append(li.text)
+      links.append(li['href'])
+
+    next_page_link = soup.select_one('#main_pack > div.api_sc_page_wrap > div > a.btn_next')
+    
+    url = 'https://search.naver.com/search.naver' + next_page_link['href']
+
+  df = pd.DataFrame()
+  df['기사 제목'] = titles
+  df['링크'] = links
+
+  df.to_excel(file_name, index=False)
