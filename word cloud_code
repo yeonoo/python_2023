@@ -1,0 +1,8 @@
+wordcloud = WordCloud(
+    font_path='C:\\windows\\fonts\\KBIZ한마음고딕 H.ttf',
+    relative_scaling = 0.5,
+    background_color='white').generate_from_frequencies(word)
+plt.figure(figsize=(8,4))
+plt.imshow(wordcloud)
+plt.axis('off')
+plt.show()
