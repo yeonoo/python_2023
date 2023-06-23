@@ -1,0 +1,19 @@
+def articles_scrap(num, file_name):
+  titles = []
+  contents = []
+  news = driver.find_elements(By.CSS_SELECTOR,'#main_pack > section.sc_new.sp_nnews._prs_nws > div > div.group_news > ul > li > div > div > div.news_info > div.info_group > a:nth-child(3)')
+  
+  for i in range(num):
+    if news[i].text == '네이버뉴스':
+      news[i].click()
+      driver.switch_to.window(driver.window_handles[1])
+      titles.append(driver.find_element(By.CLASS_NAME, 'media_end_head_headline').text)
+      contents.append(driver.find_element(By.CSS_SELECTOR, '#dic_area').text)
+      driver.close()
+      driver.switch_to.window(driver.window_handles[0])
+
+  df = pd.DataFrame()
+  df['기사 제목'] = titles
+  df['본문'] = contents
+
+  df.to_excel(file_name, index=False)
