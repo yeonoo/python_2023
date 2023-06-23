@@ -1,3 +1,12 @@
+nouns = []
+for text in df['본문']:
+    nouns.extend(okt.nouns(text))
+
+# 명사의 빈도수 세기
+word = Counter(nouns)
+word = word.most_common(10)
+word = dict(word)
+
 wordcloud = WordCloud(
     font_path='C:\\windows\\fonts\\KBIZ한마음고딕 H.ttf',
     relative_scaling = 0.5,
